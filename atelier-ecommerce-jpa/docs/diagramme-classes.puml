@@ -1,0 +1,9 @@
+@startuml
+class Client { id: Long; nom: String; email: String }
+class Produit { id: Long; nom: String; description: String; prix: double; stock: int }
+class Commande { id: Long; dateCommande: LocalDateTime; statut: String }
+class LigneCommande { id: Long; quantite: int; prixUnitaire: double }
+Client "1" -- "0..*" Commande
+Commande "1" *-- "1..*" LigneCommande
+Produit "1" -- "0..*" LigneCommande
+@enduml

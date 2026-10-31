@@ -1,0 +1,3 @@
+package ma.fstt.web;
+import jakarta.servlet.*;import jakarta.servlet.annotation.*;import jakarta.servlet.http.*;import ma.fstt.dao.*;import java.io.*;
+@WebServlet("/commandes") public class CommandeServlet extends HttpServlet {private final CommandeDAO dao=new CommandeDAO();protected void doGet(HttpServletRequest r,HttpServletResponse s)throws ServletException,IOException{r.setAttribute("commandes",dao.toutes());r.getRequestDispatcher("/WEB-INF/views/commandes.jsp").forward(r,s);}}

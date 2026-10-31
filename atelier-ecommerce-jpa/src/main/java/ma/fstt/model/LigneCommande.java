@@ -1,0 +1,3 @@
+package ma.fstt.model;
+import jakarta.persistence.*;
+@Entity @Table(name="ligne_commande") public class LigneCommande { @Id @GeneratedValue(strategy=GenerationType.IDENTITY) private Long id; private int quantite; private double prixUnitaire; @ManyToOne(optional=false) @JoinColumn(name="commande_id") private Commande commande; @ManyToOne(optional=false) @JoinColumn(name="produit_id") private Produit produit; public LigneCommande(){} public LigneCommande(Produit p,int q,double prix){produit=p;quantite=q;prixUnitaire=prix;} public void setCommande(Commande c){commande=c;} public Long getId(){return id;} public int getQuantite(){return quantite;} public double getPrixUnitaire(){return prixUnitaire;} public Produit getProduit(){return produit;} }

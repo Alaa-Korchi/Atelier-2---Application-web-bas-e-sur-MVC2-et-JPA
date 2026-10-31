@@ -1,0 +1,3 @@
+package ma.fstt.model;
+import jakarta.persistence.*; import java.util.*;
+@Entity @Table(name="client") public class Client { @Id @GeneratedValue(strategy=GenerationType.IDENTITY) private Long id; @Column(nullable=false) private String nom; @Column(nullable=false,unique=true) private String email; @OneToMany(mappedBy="client") private List<Commande> commandes=new ArrayList<>(); public Client(){} public Client(String n,String e){nom=n;email=e;} public Long getId(){return id;} public String getNom(){return nom;} public void setNom(String v){nom=v;} public String getEmail(){return email;} public void setEmail(String v){email=v;} public List<Commande> getCommandes(){return commandes;} }

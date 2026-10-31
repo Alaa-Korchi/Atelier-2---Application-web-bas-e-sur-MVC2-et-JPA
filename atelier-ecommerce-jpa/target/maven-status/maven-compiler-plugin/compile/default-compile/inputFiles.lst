@@ -1,0 +1,13 @@
+C:\Users\Usuario\Downloads\atelier-commerce-refonte-sources\atelier-ecommerce-jpa\src\main\java\ma\fstt\dao\BaseDAO.java
+C:\Users\Usuario\Downloads\atelier-commerce-refonte-sources\atelier-ecommerce-jpa\src\main\java\ma\fstt\dao\ClientDAO.java
+C:\Users\Usuario\Downloads\atelier-commerce-refonte-sources\atelier-ecommerce-jpa\src\main\java\ma\fstt\dao\CommandeDAO.java
+C:\Users\Usuario\Downloads\atelier-commerce-refonte-sources\atelier-ecommerce-jpa\src\main\java\ma\fstt\dao\ProduitDAO.java
+C:\Users\Usuario\Downloads\atelier-commerce-refonte-sources\atelier-ecommerce-jpa\src\main\java\ma\fstt\model\Client.java
+C:\Users\Usuario\Downloads\atelier-commerce-refonte-sources\atelier-ecommerce-jpa\src\main\java\ma\fstt\model\Commande.java
+C:\Users\Usuario\Downloads\atelier-commerce-refonte-sources\atelier-ecommerce-jpa\src\main\java\ma\fstt\model\LigneCommande.java
+C:\Users\Usuario\Downloads\atelier-commerce-refonte-sources\atelier-ecommerce-jpa\src\main\java\ma\fstt\model\Produit.java
+C:\Users\Usuario\Downloads\atelier-commerce-refonte-sources\atelier-ecommerce-jpa\src\main\java\ma\fstt\persistence\JPAUtil.java
+C:\Users\Usuario\Downloads\atelier-commerce-refonte-sources\atelier-ecommerce-jpa\src\main\java\ma\fstt\web\ClientServlet.java
+C:\Users\Usuario\Downloads\atelier-commerce-refonte-sources\atelier-ecommerce-jpa\src\main\java\ma\fstt\web\CommandeServlet.java
+C:\Users\Usuario\Downloads\atelier-commerce-refonte-sources\atelier-ecommerce-jpa\src\main\java\ma\fstt\web\PanierServlet.java
+C:\Users\Usuario\Downloads\atelier-commerce-refonte-sources\atelier-ecommerce-jpa\src\main\java\ma\fstt\web\ProduitServlet.java

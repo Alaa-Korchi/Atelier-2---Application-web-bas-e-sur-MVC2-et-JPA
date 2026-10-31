@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#172554">
+    <title><c:out value="${pageTitle}"/> · Atelier Commerce</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
+    <script defer src="${pageContext.request.contextPath}/js/app.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Aller au contenu principal</a>
+<div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Navigation principale">
+        <a class="brand" href="${pageContext.request.contextPath}/produits" aria-label="Atelier Commerce, accueil">
+            <span class="brand-mark" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M4 8.5 12 4l8 4.5v8L12 21l-8-4.5z"/><path d="m4.5 8.8 7.5 4.3 7.5-4.3M12 13.1V21"/></svg>
+            </span>
+            <span class="brand-copy"><strong>Atelier</strong><small>COMMERCE</small></span>
+        </a>
+
+        <button class="sidebar-close" type="button" data-sidebar-close aria-label="Fermer le menu">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m18 6-12 12M6 6l12 12"/></svg>
+        </button>
+
+        <div class="sidebar-caption">ESPACE DE TRAVAIL</div>
+        <nav class="primary-nav">
+            <a class="nav-link ${activePage == 'produits' ? 'is-active' : ''}"
+               href="${pageContext.request.contextPath}/produits">
+                <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7.5 12 3l8 4.5v9L12 21l-8-4.5z"/><path d="m4.5 7.8 7.5 4.3 7.5-4.3M12 12.1V21"/></svg>
+                <span>Produits</span>
+            </a>
+            <a class="nav-link ${activePage == 'clients' ? 'is-active' : ''}"
+               href="${pageContext.request.contextPath}/clients">
+                <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M3 20v-1.5A4.5 4.5 0 0 1 7.5 14h3a4.5 4.5 0 0 1 4.5 4.5V20M16 5.2a3.5 3.5 0 0 1 0 6.7M17 14.2a4.5 4.5 0 0 1 4 4.5V20"/></svg>
+                <span>Clients</span>
+            </a>
+            <a class="nav-link ${activePage == 'panier' ? 'is-active' : ''}"
+               href="${pageContext.request.contextPath}/panier">
+                <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.2 10.2a2 2 0 0 0 2 1.6h8a2 2 0 0 0 1.9-1.4L21 8H6"/><circle cx="10" cy="19" r="1.3"/><circle cx="18" cy="19" r="1.3"/></svg>
+                <span>Panier</span>
+            </a>
+            <a class="nav-link ${activePage == 'commandes' ? 'is-active' : ''}"
+               href="${pageContext.request.contextPath}/commandes">
+                <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5"/></svg>
+                <span>Commandes</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-note">
+            <span class="sidebar-note-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="8.5"/></svg>
+            </span>
+            <span><strong>Gestion quotidienne</strong><small>Catalogue, clients et ventes</small></span>
+        </div>
+        <div class="sidebar-footer"><span class="status-dot"></span> Données de l’application</div>
+    </aside>
+
+    <button class="sidebar-backdrop" type="button" data-sidebar-close aria-label="Fermer le menu"></button>
+
+    <div class="app-main">
+        <header class="topbar">
+            <div class="topbar-left">
+                <button class="mobile-menu" type="button" data-sidebar-open aria-label="Ouvrir le menu">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+                <div class="breadcrumbs"><span>Atelier Commerce</span><span class="breadcrumb-separator">/</span><strong><c:out value="${pageTitle}"/></strong></div>
+            </div>
+            <div class="topbar-context"><span class="status-dot"></span><span>Interface de gestion</span></div>
+        </header>
+
+        <main class="page-content" id="main-content">
+            <section class="page-heading">
+                <div>
+                    <p class="eyebrow"><c:out value="${pageEyebrow}"/></p>
+                    <h1><c:out value="${pageTitle}"/></h1>
+                    <p class="page-description"><c:out value="${pageDescription}"/></p>
+                </div>
+                <c:if test="${not empty sessionScope.message}">
+                    <div class="flash flash-success" role="status">
+                        <span class="flash-icon" aria-hidden="true">✓</span>
+                        <span><c:out value="${sessionScope.message}"/></span>
+                    </div>
+                    <c:remove var="message" scope="session"/>
+                </c:if>
+                <c:if test="${not empty sessionScope.erreur}">
+                    <div class="flash flash-error" role="alert">
+                        <span class="flash-icon" aria-hidden="true">!</span>
+                        <span><c:out value="${sessionScope.erreur}"/></span>
+                    </div>
+                    <c:remove var="erreur" scope="session"/>
+                </c:if>
+            </section>

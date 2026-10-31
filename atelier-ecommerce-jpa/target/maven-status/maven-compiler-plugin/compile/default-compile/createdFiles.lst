@@ -1,0 +1,13 @@
+ma\fstt\dao\ClientDAO.class
+ma\fstt\web\ProduitServlet.class
+ma\fstt\web\PanierServlet.class
+ma\fstt\dao\BaseDAO.class
+ma\fstt\persistence\JPAUtil.class
+ma\fstt\model\Client.class
+ma\fstt\model\LigneCommande.class
+ma\fstt\web\ClientServlet.class
+ma\fstt\dao\ProduitDAO.class
+ma\fstt\model\Produit.class
+ma\fstt\web\CommandeServlet.class
+ma\fstt\dao\CommandeDAO.class
+ma\fstt\model\Commande.class

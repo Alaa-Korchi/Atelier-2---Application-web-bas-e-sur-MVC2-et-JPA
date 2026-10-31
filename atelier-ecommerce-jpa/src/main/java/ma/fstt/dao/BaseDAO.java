@@ -1,0 +1,3 @@
+package ma.fstt.dao;
+import jakarta.persistence.*; import ma.fstt.persistence.JPAUtil; import java.util.function.Consumer;
+public abstract class BaseDAO { protected void tx(Consumer<EntityManager> action){EntityManager em=JPAUtil.getEmf().createEntityManager(); EntityTransaction t=em.getTransaction(); try{t.begin();action.accept(em);t.commit();}catch(RuntimeException e){if(t.isActive())t.rollback();throw e;}finally{em.close();}} }
